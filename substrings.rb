@@ -1,5 +1,5 @@
 def substrings(str, dict)
-  instances = dict.collect { |e|  str.downcase.scan(e)}.reject { |e|  e.empty?}
+  instances = dict.map { |e|  str.downcase.scan(e)}.reject { |e|  e.empty?}
   return Hash[instances.map {|row| [row[0], row.length]}]
 end
 
